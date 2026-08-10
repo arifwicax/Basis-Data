@@ -1,326 +1,312 @@
-# Normalisasi
-## 🧩 **Bentuk Normal Pertama (1NF – First Normal Form)**
+# Minggu 6 — Normalisasi Basis Data
 
-### 🎯 **Tujuan:**
+**Mata kuliah:** Basis Data (SI2514010)  
+**Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.  
+**Sub-CPMK yang didukung:** Mahasiswa mampu menganalisis kebutuhan dan merancang basis data yang konsisten (C4, C6).
 
-Agar setiap kolom dalam tabel berisi **satu nilai saja (tidak ganda)** dan setiap baris bisa **dibedakan secara unik** dengan **primary key**.
-Jadi, tabel harus rapi, tidak ada nilai yang bercabang atau ditumpuk dalam satu kolom.
+## 1. Pengertian Normalisasi
 
----
+**Normalisasi** adalah proses mengorganisasi tabel relasional agar data tersimpan secara logis, konsisten, dan memiliki redundansi seminimal mungkin. Tabel besar diuraikan menjadi tabel yang lebih kecil, kemudian dihubungkan kembali menggunakan key.
 
-## 🪜 **Langkah-langkah dan Penjelasan Sederhana**
+Normalisasi bukan sekadar “memecah tabel”. Pemecahan harus mengikuti ketergantungan data dan tidak boleh menghilangkan informasi.
 
-### 1️⃣ **Pastikan setiap atribut bernilai tunggal (atomic)**
+## 2. Tujuan Normalisasi
 
-Artinya:
+Sesuai slide, normalisasi menghasilkan tabel yang:
 
-* Dalam satu sel tabel, **tidak boleh ada lebih dari satu nilai**.
-* Tidak boleh ada data seperti “Data A, Data B” di dalam satu kolom.
+1. memuat data yang benar-benar diperlukan;
+2. memiliki redundansi sesedikit mungkin;
+3. lebih efisien ketika diperbarui;
+4. mengurangi risiko kehilangan data yang tidak disengaja;
+5. menjaga integritas dan konsistensi;
+6. mudah dikembangkan serta dipelihara.
 
-📘 **Contoh belum 1NF:**
+## 3. Redundansi dan Anomali
 
-| NIM | Nama | Hobi             |
-| --- | ---- | ---------------- |
-| 101 | Andi | Membaca, Menulis |
+Contoh tabel:
 
-👉 Kolom **Hobi** berisi dua nilai ("Membaca" dan "Menulis").
-Ini **tidak memenuhi 1NF**, karena satu sel seharusnya berisi **satu nilai saja**.
+| NIM | Nama | KodeMK | MataKuliah | SKS | Nilai |
+|---|---|---|---|---:|---|
+| 1 | Hana | KD01 | Basis Data | 2 | A |
+| 1 | Hana | KD02 | Kalkulus | 3 | B |
+| 2 | Cantika | KD01 | Basis Data | 2 | B |
 
-✅ **Perbaikan (jadi 1NF):**
+Nama mahasiswa, nama mata kuliah, dan SKS berulang.
 
-| NIM | Nama | Hobi    |
-| --- | ---- | ------- |
-| 101 | Andi | Membaca |
-| 101 | Andi | Menulis |
+### 3.1 Insertion Anomaly
 
-Sekarang setiap baris berisi **satu nilai per kolom** — sudah **atomic** ✅
+Kita sulit menyimpan mata kuliah baru jika belum ada mahasiswa yang mengambilnya karena baris mengharuskan NIM dan Nilai.
 
----
+### 3.2 Update Anomaly
 
-### 2️⃣ **Tambahkan atribut yang diperlukan, terutama calon Primary Key**
+Jika SKS Basis Data berubah, semua baris KD01 harus diperbarui. Jika satu baris terlewat, data menjadi inkonsisten.
 
-Tujuannya agar setiap baris **unik dan bisa dibedakan**.
+### 3.3 Deletion Anomaly
 
-📘 Contoh:
-Kalau sebelumnya tabel tidak punya pembeda unik seperti ID, maka tambahkan kolom **ID** atau **kode unik**.
+Jika baris terakhir mahasiswa yang mengambil suatu mata kuliah dihapus, informasi mata kuliah tersebut ikut hilang.
 
-| ID | NIM | Nama | Hobi    |
-| -- | --- | ---- | ------- |
-| 1  | 101 | Andi | Membaca |
-| 2  | 101 | Andi | Menulis |
+## 4. Istilah Dasar
 
-Sekarang kita bisa tahu **baris mana** yang spesifik karena ada **ID** sebagai primary key.
+| Istilah | Makna |
+|---|---|
+| Relasi | Tabel pada model relasional |
+| Atribut | Kolom |
+| Tuple | Baris |
+| Determinan | Atribut yang menentukan atribut lain |
+| Candidate key | Key minimal yang mengidentifikasi tuple |
+| Composite key | Key yang terdiri dari beberapa atribut |
+| Non-key attribute | Atribut yang bukan bagian candidate key |
+| Dekomposisi | Pemecahan tabel menjadi tabel lebih kecil |
 
----
+## 5. Functional Dependency
 
-### 3️⃣ **Hapus atribut yang tidak diperlukan (hindari redudansi)**
-
-Redudansi = pengulangan data yang tidak perlu, yang bisa bikin tabel besar dan sulit dikelola.
-
-📘 Contoh belum efisien:
-
-| NIM | Nama | Jurusan | DosenWali | Hobi    |
-| --- | ---- | ------- | --------- | ------- |
-| 101 | Andi | SI      | Bu Sinta  | Membaca |
-| 101 | Andi | SI      | Bu Sinta  | Menulis |
-
-👉 Di sini **Nama, Jurusan, dan DosenWali** berulang-ulang muncul untuk NIM yang sama.
-Kalau dibiarkan, nanti susah kalau ada perubahan (misalnya nama dosen wali ganti — harus ubah di banyak baris).
-
-✅ **Solusi:** pisahkan menjadi tabel-tabel kecil sesuai kelompok data.
-
----
-
-### 💡 **Hasil Normalisasi ke-1 (1NF):**
-
-#### 🧱 Tabel Mahasiswa
-
-| NIM | Nama | Jurusan | DosenWali |
-| --- | ---- | ------- | --------- |
-| 101 | Andi | SI      | Bu Sinta  |
-
-#### 🧱 Tabel Hobi
-
-| NIM | Hobi    |
-| --- | ------- |
-| 101 | Membaca |
-| 101 | Menulis |
-
----
-
-## 🧠 **Kesimpulan Mudah**
-
-| Prinsip                | Penjelasan                                                         |
-| ---------------------- | ------------------------------------------------------------------ |
-| 1️⃣ Nilai tunggal      | Setiap kolom hanya boleh punya **satu nilai**, bukan daftar nilai. |
-| 2️⃣ Ada primary key    | Setiap baris harus **unik** dan bisa dibedakan.                    |
-| 3️⃣ Hindari data ganda | Hilangkan atribut yang berulang agar data lebih rapi dan efisien.  |
-
----
-
-### 🎓 **Inti Singkatnya:**
-
-> Bentuk Normal Pertama (1NF) memastikan bahwa tabel berisi **data yang terstruktur, rapi, dan tidak ganda**, sehingga mudah diproses dan diolah oleh sistem database.
-
----
-
-## 🧩 **Bentuk Normalisasi Ke-2 (2NF – Second Normal Form)**
-
-### 🎯 Tujuan:
-
-Menghilangkan **ketergantungan sebagian** (partial dependency), yaitu ketika ada kolom (atribut) yang hanya tergantung pada **sebagian** dari primary key gabungan, bukan pada seluruhnya.
-
----
-
-## 🪜 **Langkah-langkah dan Penjelasan Mudah**
-
-### 1. **Cari atribut yang bisa menjadi Primary Key**
-
-Pertama-tama, tentukan kolom mana yang menjadi **pembeda unik** dari setiap baris (record).
-Kalau tabel punya lebih dari satu kolom kunci (composite key), perhatikan baik-baik hubungan antar kolom lainnya.
-
-📘 **Contoh:**
-Misalkan tabel berikut 👇
-
-| NIM | KodeMK | Nama | NamaMK     | Nilai |
-| --- | ------ | ---- | ---------- | ----- |
-| 101 | MK01   | Andi | Basis Data | 90    |
-| 101 | MK02   | Andi | Jaringan   | 80    |
-
-👉 Primary key gabungan di sini adalah **(NIM, KodeMK)** karena kombinasi keduanya unik untuk setiap baris.
-
----
-
-### 2. **Evaluasi atribut lain**
-
-Sekarang, lihat kolom selain primary key:
-
-* Apakah kolom tersebut bergantung pada **seluruh** primary key?
-* Atau hanya pada **bagian dari** primary key?
-
-📍 Jika hanya bergantung pada sebagian kunci → **itu masalah di 2NF**.
-
----
-
-### 3. **Jika atribut bernilai tunggal dan bergantung penuh pada primary key → tetap dalam satu tabel**
+Notasi `X → Y` berarti setiap nilai X menentukan tepat satu nilai Y pada satu waktu.
 
 Contoh:
 
-* Kolom **Nilai** bergantung pada **(NIM, KodeMK)** → ini benar, karena nilai tertentu hanya bisa diketahui dari kombinasi mahasiswa dan mata kuliah tertentu.
-  Jadi kolom **Nilai** boleh tetap di tabel itu.
+```text
+NIM → Nama
+KodeMK → NamaMK, SKS
+(NIM, KodeMK) → Nilai
+```
 
----
+Dependensi berasal dari aturan bisnis, bukan hanya dari data contoh. Dua nilai kebetulan sama tidak otomatis membentuk functional dependency.
 
-### 4. **Jika atribut bernilai jamak atau hanya bergantung pada sebagian kunci → pisahkan ke tabel baru**
+## 6. Syarat Dekomposisi yang Baik
+
+### 6.1 Lossless-Join Decomposition
+
+Setelah tabel dipecah, JOIN harus dapat mengembalikan informasi semula tanpa kehilangan atau menghasilkan baris palsu.
 
 Contoh:
 
-* Kolom **Nama** hanya bergantung pada **NIM** (tidak perlu KodeMK).
-* Kolom **NamaMK** hanya bergantung pada **KodeMK** (tidak perlu NIM).
+```text
+Mahasiswa(NIM, Nama)
+MataKuliah(KodeMK, NamaMK)
+KRS(NIM, KodeMK, Nilai)
+```
 
-Berarti harus dipisahkan:
+JOIN ketiganya dapat membentuk kembali data mahasiswa, mata kuliah, dan nilai.
 
-📘 **Hasil dekomposisi:**
+### 6.2 Lossy Decomposition
 
-* **Tabel Mahasiswa**
+Dekomposisi lossy kehilangan penghubung atau menghasilkan pasangan yang tidak pernah ada. Contohnya, jika tabel KRS tidak menyimpan pasangan NIM–KodeMK, hubungan siapa mengambil mata kuliah apa akan hilang.
 
-  | NIM | Nama |
-  | --- | ---- |
-  | 101 | Andi |
+### 6.3 Dependency Preservation
 
-* **Tabel MataKuliah**
+Aturan ketergantungan sebaiknya tetap dapat ditegakkan pada tabel hasil tanpa JOIN yang rumit. Misalnya `KodeMK → NamaMK` dijaga pada tabel MataKuliah.
 
-  | KodeMK | NamaMK     |
-  | ------ | ---------- |
-  | MK01   | Basis Data |
-  | MK02   | Jaringan   |
+### 6.4 BCNF atau Minimal 3NF
 
-* **Tabel Nilai**
+Target rancangan yang baik adalah BCNF bila memungkinkan. Jika constraint tertentu membuat BCNF sulit dicapai tanpa kehilangan dependency preservation, minimal gunakan 3NF dengan alasan yang terdokumentasi.
 
-  | NIM | KodeMK | Nilai |
-  | --- | ------ | ----- |
-  | 101 | MK01   | 90    |
-  | 101 | MK02   | 80    |
+## 7. Tabel Tidak Normal pada Nota Penjualan
 
----
+Slide memakai atribut:
 
-## 💡 **Kesimpulan Sederhana:**
+```text
+nomor_nota, kode_pelanggan, nama_pelanggan,
+kode_kasir, nama_kasir, kode_barang, nama_barang,
+jumlah, harga_satuan, DP, jatuh_tempo, tanggal,
+nama_kontak, telepon, subtotal, total, kurang_bayar
+```
 
-| Langkah                                        | Penjelasan Mudah                                    |
-| ---------------------------------------------- | --------------------------------------------------- |
-| 1️⃣ Cari primary key                           | Tentukan kolom unik yang mewakili setiap baris data |
-| 2️⃣ Evaluasi kolom lain                        | Cek apakah kolom lain bergantung penuh pada kunci   |
-| 3️⃣ Kalau bergantung penuh → tetap             | Simpan dalam tabel yang sama                        |
-| 4️⃣ Kalau hanya bergantung sebagian → pisahkan | Buat tabel baru agar tidak ada duplikasi data       |
+Satu nota memiliki banyak barang. Jika barang ditempatkan sebagai kelompok berulang atau kolom `barang1`, `barang2`, tabel masih **Unnormalized Form (UNF)**.
 
----
+Nilai yang dapat dihitung:
 
-🧠 **Intinya:**
+```text
+subtotal = jumlah × harga_satuan
+total = jumlah seluruh subtotal
+kurang_bayar = total − DP
+```
 
-> Bentuk Normal ke-2 (2NF) memastikan **setiap kolom non-key bergantung sepenuhnya pada seluruh primary key**, bukan hanya sebagian.
-> Hasilnya: data jadi lebih rapi, tidak duplikat, dan mudah di-update tanpa inkonsistensi.
+Atribut turunan tidak selalu perlu disimpan karena dapat dihitung dan berisiko tidak konsisten.
 
----
+## 8. First Normal Form (1NF)
 
-## 🧩 **Bentuk Normal Ketiga (3NF – Third Normal Form)**
+Syarat 1NF:
 
-### 🎯 **Tujuan:**
+1. setiap sel memiliki nilai atomik/tunggal;
+2. tidak ada repeating group atau multivalue;
+3. setiap baris dapat diidentifikasi secara unik;
+4. satu kolom menyimpan satu domain data yang konsisten.
 
-Agar **setiap kolom non-kunci hanya bergantung langsung pada kunci utama (primary key)** — bukan pada kolom lain.
-Dengan kata lain, **hilangkan ketergantungan tidak langsung (transitif)** antar kolom non-key.
+Ubah barang dalam nota menjadi baris:
 
----
+| NomorNota | KodeBarang | Jumlah | HargaSatuan |
+|---|---|---:|---:|
+| 83453 | B01 | 2 | 1000000 |
+| 83453 | B05 | 3 | 200000 |
+| 83453 | B03 | 2 | 1200000 |
 
-## 💡 **1. Apa Itu Ketergantungan Transitif?**
+Candidate key detail dapat berupa `(NomorNota, KodeBarang)` jika barang hanya boleh muncul sekali per nota. Jika barang sama dapat muncul lebih dari sekali, gunakan `NomorBaris`.
 
-Ketergantungan **transitif** terjadi ketika ada hubungan seperti ini:
+1NF belum otomatis menghilangkan redundansi; data pelanggan dan barang masih dapat berulang.
 
-> A (Primary Key) → B (Non-key) → C (Non-key)
+## 9. Second Normal Form (2NF)
 
-Artinya:
+Syarat 2NF:
 
-* Kolom **C** tidak langsung bergantung pada **Primary Key (A)**,
-  tapi bergantung pada **kolom lain (B)** yang juga bukan kunci utama.
+1. sudah memenuhi 1NF;
+2. setiap atribut non-key bergantung penuh pada seluruh candidate key;
+3. tidak ada partial dependency.
 
-🔎 Ini membuat data bisa **tidak konsisten** dan menyebabkan **redudansi** (pengulangan data).
+Pada key `(NomorNota, KodeBarang)`:
 
----
+```text
+NomorNota → Tanggal, KodePelanggan, KodeKasir, DP
+KodeBarang → NamaBarang
+(NomorNota, KodeBarang) → Jumlah, HargaJual
+```
 
-## 📘 **2. Contoh Kasus Sebelum 3NF**
+Atribut yang hanya bergantung pada sebagian key dipisahkan:
 
-Misalkan ada tabel mahasiswa berikut:
+```text
+Nota(NomorNota, Tanggal, KodePelanggan, KodeKasir, DP, JatuhTempo)
+Barang(KodeBarang, NamaBarang)
+DetailNota(NomorNota, KodeBarang, Jumlah, HargaJual)
+```
 
-| NIM | Nama | KodeJurusan | NamaJurusan        |
-| --- | ---- | ----------- | ------------------ |
-| 101 | Andi | SI          | Sistem Informasi   |
-| 102 | Budi | TI          | Teknik Informatika |
-| 103 | Cici | SI          | Sistem Informasi   |
+2NF terutama relevan ketika tabel memiliki composite candidate key. Tabel dengan candidate key satu atribut otomatis tidak memiliki partial dependency, tetapi belum tentu 3NF.
 
----
+## 10. Third Normal Form (3NF)
 
-### ⚠️ **Masalah:**
+Syarat 3NF:
 
-* Primary key: `NIM`
-* `NamaJurusan` bergantung pada `KodeJurusan`, **bukan langsung ke NIM**.
-  Jadi ada **ketergantungan transitif**:
-  `NIM → KodeJurusan → NamaJurusan`.
+1. sudah memenuhi 2NF;
+2. tidak ada transitive dependency antara atribut non-key.
 
+Contoh pada Nota:
 
-Akibatnya:
+```text
+NomorNota → KodePelanggan
+KodePelanggan → NamaPelanggan, NamaKontak, Telepon
+```
 
-* Kalau nama jurusan berubah (misal “Sistem Informasi” jadi “Sains Informasi”),
-  maka kita harus ubah **banyak baris**.
-* Ini bisa menimbulkan **inkonsistensi data**.
+`NamaPelanggan` bergantung tidak langsung pada NomorNota melalui KodePelanggan. Pisahkan:
 
----
+```text
+Pelanggan(KodePelanggan, NamaPelanggan, NamaKontak, Telepon)
+Kasir(KodeKasir, NamaKasir)
+Nota(NomorNota, Tanggal, KodePelanggan, KodeKasir, DP, JatuhTempo)
+Barang(KodeBarang, NamaBarang)
+DetailNota(NomorNota, KodeBarang, Jumlah, HargaJual)
+```
 
-## 🧱 **3. Cara Memperbaiki ke 3NF**
+## 11. Boyce-Codd Normal Form (BCNF)
 
-### 🔹 Langkah 1 – Identifikasi ketergantungan transitif
+Sebuah tabel memenuhi BCNF jika setiap determinan merupakan superkey/candidate key.
 
-Cari kolom non-key yang tergantung pada kolom non-key lain.
-Dalam contoh ini:
+BCNF lebih ketat dari 3NF. Banyak tabel sederhana yang telah dirancang baik otomatis memenuhi BCNF. Pemeriksaan dilakukan dengan menuliskan seluruh functional dependency dan memastikan sisi kiri setiap dependency adalah key.
 
-> `NamaJurusan` tergantung pada `KodeJurusan` (bukan pada `NIM`).
+## 12. Hasil Skema Nota Penjualan
 
-### 🔹 Langkah 2 – Pisahkan tabel
+```text
+Pelanggan(kode_pelanggan, nama, nama_kontak, telepon)
+Kasir(kode_kasir, nama)
+Barang(kode_barang, nama)
+Nota(nomor_nota, tanggal, kode_pelanggan, kode_kasir, dp, jatuh_tempo)
+DetailNota(nomor_nota, nomor_baris, kode_barang, jumlah, harga_jual)
+```
 
-Buat tabel baru untuk atribut yang memiliki hubungan langsung tersebut.
+Key dan hubungan:
 
----
+- PK Pelanggan: `kode_pelanggan`;
+- PK Kasir: `kode_kasir`;
+- PK Barang: `kode_barang`;
+- PK Nota: `nomor_nota`;
+- PK DetailNota: `(nomor_nota, nomor_baris)`;
+- Nota memiliki FK ke Pelanggan dan Kasir;
+- DetailNota memiliki FK ke Nota dan Barang.
 
-## ✅ **Hasil Setelah Normalisasi ke-3:**
+## 13. Membuktikan Lossless Join
 
-### 🧱 **Tabel Mahasiswa**
+```sql
+SELECT n.nomor_nota, n.tanggal,
+       p.nama AS pelanggan,
+       k.nama AS kasir,
+       b.nama AS barang,
+       d.jumlah, d.harga_jual,
+       d.jumlah * d.harga_jual AS subtotal
+FROM Nota n
+JOIN Pelanggan p ON p.kode_pelanggan = n.kode_pelanggan
+JOIN Kasir k ON k.kode_kasir = n.kode_kasir
+JOIN DetailNota d ON d.nomor_nota = n.nomor_nota
+JOIN Barang b ON b.kode_barang = d.kode_barang;
+```
 
-| NIM | Nama | KodeJurusan |
-| --- | ---- | ----------- |
-| 101 | Andi | SI          |
-| 102 | Budi | TI          |
-| 103 | Cici | SI          |
+Bandingkan jumlah dan makna baris JOIN dengan data awal. JOIN harus mengembalikan hubungan transaksi yang benar, bukan Cartesian product.
 
-### 🧱 **Tabel Jurusan**
+## 14. Kapan Normalisasi Berhenti?
 
-| KodeJurusan | NamaJurusan        |
-| ----------- | ------------------ |
-| SI          | Sistem Informasi   |
-| TI          | Teknik Informatika |
+Untuk pembelajaran dasar, target praktis adalah 3NF atau BCNF. Normal form lebih tinggi ada, tetapi diterapkan jika terdapat dependency khusus. Jangan melakukan denormalisasi sebelum masalah performa diukur. Denormalisasi menambah redundansi dan membutuhkan mekanisme konsistensi.
 
----
+## 15. Kesalahan Umum
 
-Sekarang:
+1. Memecah tabel tanpa menulis functional dependency.
+2. Menganggap 1NF sudah menghilangkan semua redundansi.
+3. Mengira semua tabel harus memiliki surrogate key.
+4. Menghapus atribut turunan tanpa mempertimbangkan kebutuhan.
+5. Memisahkan tabel sampai hubungan data hilang.
+6. Tidak menentukan PK dan FK hasil dekomposisi.
+7. Menentukan dependency hanya dari beberapa baris contoh.
+8. Tidak menguji lossless join.
+9. Menyebut tabel banyak kolom pasti tidak normal.
+10. Melakukan denormalisasi tanpa pengukuran.
 
-* `NamaJurusan` **tidak lagi tergantung pada NIM**,
-  tapi **langsung pada KodeJurusan** (yang jadi primary key di tabel Jurusan).
-* Data jadi **lebih efisien, tidak berulang, dan mudah diubah**.
+## 16. Prosedur Normalisasi
 
----
+1. Kumpulkan seluruh atribut dari kebutuhan/dokumen.
+2. Tentukan candidate key.
+3. Tuliskan functional dependency.
+4. Hilangkan repeating group untuk 1NF.
+5. Hilangkan partial dependency untuk 2NF.
+6. Hilangkan transitive dependency untuk 3NF.
+7. Periksa determinan untuk BCNF.
+8. Tetapkan PK dan FK.
+9. Uji lossless join dan dependency preservation.
+10. Cocokkan kembali dengan ERD dan business rule.
 
-## 📊 **4. Kesimpulan Sederhana**
+## 17. Latihan
 
-| Aspek               | Penjelasan                                                               |
-| ------------------- | ------------------------------------------------------------------------ |
-| **Fokus utama**     | Menghilangkan ketergantungan tidak langsung antar kolom non-key.         |
-| **Ciri tabel 3NF**  | Setiap kolom non-key hanya bergantung pada primary key.                  |
-| **Manfaat**         | Menghindari redudansi, menjaga konsistensi, dan mempermudah update data. |
-| **Kapan digunakan** | Setelah tabel memenuhi bentuk 2NF.                                       |
+1. Jelaskan tiga anomali menggunakan tabel mahasiswa–mata kuliah.
+2. Tentukan dependency pada tabel nota.
+3. Ubah kelompok barang menjadi 1NF.
+4. Tunjukkan partial dependency sebelum 2NF.
+5. Tunjukkan transitive dependency sebelum 3NF.
+6. Jelaskan perbedaan 3NF dan BCNF.
+7. Buktikan hasil dekomposisi dapat di-JOIN.
 
----
+## 18. Kuis Formatif
 
-## 🧠 **Analogi Sederhana**
+1. Nilai tunggal dalam setiap sel merupakan syarat apa?
+2. Dependency pada sebagian composite key disebut apa?
+3. Dependency non-key melalui non-key disebut apa?
+4. Apa arti lossless join?
+5. Mengapa dependency preservation penting?
+6. Dalam BCNF, setiap determinan harus merupakan apa?
 
-Bayangkan kamu punya data seperti ini:
+## 19. Rangkuman
 
-> Mahasiswa → Jurusan → Nama Jurusan
+- Normalisasi mengurangi redundansi dan anomali.
+- Functional dependency menjadi dasar dekomposisi.
+- Dekomposisi harus lossless dan sebisa mungkin menjaga dependency.
+- 1NF menghilangkan repeating group dan multivalue.
+- 2NF menghilangkan partial dependency.
+- 3NF menghilangkan transitive dependency.
+- BCNF mengharuskan setiap determinan merupakan key.
+- PK dan FK menghubungkan tabel hasil normalisasi.
+- JOIN digunakan untuk membuktikan informasi tetap dapat dikembalikan.
 
-Jika "Nama Jurusan" tergantung pada "Jurusan",
-berarti ia tidak langsung tergantung pada "Mahasiswa".
-Nah, bentuk normal ke-3 **memaksa kita untuk memisahkan** informasi jurusan ke tabel tersendiri agar data tetap **logis dan efisien**.
+## 20. Asesmen dan Praktikum
 
----
+Asesmen mencakup Tugas 3 normalisasi, praktikum, pretest, kuis, functional dependency, proses UNF–3NF/BCNF, dan bukti lossless join.
 
-### 🎓 **Inti Singkatnya:**
+[Praktikum Minggu 6 — Normalisasi Basis Data](../script/Week%206/Praktikum%20Week%206%20-%20Normalisasi%20Basis%20Data.md)
 
-> Bentuk Normal Ketiga (3NF) memastikan bahwa **semua kolom non-kunci hanya bergantung langsung pada primary key**, bukan pada kolom non-key lain, sehingga data menjadi **lebih konsisten dan bebas redudansi**.
+## Referensi
 
----
+1. Slide Week 6 — *Normalisasi*.
+2. Bagui, S. & Earp, R. (2023). *Database Design Using Entity-Relationship Diagrams*.
+3. RPS SI2514010 — Basis Data.
