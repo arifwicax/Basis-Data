@@ -1,274 +1,231 @@
 tidak # Tugas 2 — Proyek Perancangan dan Implementasi Basis Data
 
-**Mata kuliah:** Basis Data (SI2514010)  
-**Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.  
-**Bentuk tugas:** Proyek terintegrasi  
+**Mata kuliah:** Basis Data (SI2514010)
+**Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.
+**Bentuk tugas:** Proyek terintegrasi
 **Metode penilaian:** Pemeriksaan proyek, demonstrasi, dan interview individual
 
-## Tujuan Proyek
+## Implementasi Basis Data Menggunakan SQL
 
-Mahasiswa menerapkan materi pada modul menjadi sebuah basis data yang berangkat dari masalah nyata, dirancang melalui ERD, dioptimalkan, dinormalisasi, diimplementasikan menggunakan MySQL, diisi menggunakan DML, dan diuji menggunakan JOIN Query.
+### Tujuan Tugas
 
-## Bentuk Pengerjaan
+Mahasiswa mampu mengimplementasikan hasil perancangan basis data pada **Tugas 1** ke dalam Database Management System (DBMS) menggunakan SQL.
 
-Proyek dapat dikerjakan secara individu atau kelompok sesuai pembagian dosen. Walaupun proyek dikerjakan bersama, penilaian pemahaman dilakukan secara individual melalui interview. Nilai anggota dalam kelompok dapat berbeda berdasarkan penguasaan dan kontribusinya.
+Pada tugas ini, ERD yang telah dibuat sebelumnya digunakan sebagai dasar untuk membuat struktur basis data menggunakan **Data Definition Language (DDL)** dan melakukan pengelolaan data menggunakan **Data Manipulation Language (DML)**.
 
-## Pemilihan Studi Kasus
+---
 
-Pilih permasalahan nyata di sekitar mahasiswa. Contoh:
+## Studi Kasus
 
-- toko, kafe, atau usaha kecil;
-- perpustakaan;
-- sekolah atau lembaga kursus;
-- klinik atau layanan kesehatan;
-- penyewaan kendaraan;
-- pengelolaan kos;
-- organisasi atau komunitas;
-- inventaris laboratorium;
-- pemesanan tiket atau kegiatan;
-- kasus lain yang disetujui dosen.
+Gunakan **studi kasus dan ERD hasil Tugas 1** yang telah dibuat berdasarkan hasil observasi dan wawancara dengan client/mitra.
 
-Hindari menyalin proyek yang sudah tersedia secara utuh di internet. Studi kasus harus dapat dijelaskan berdasarkan kebutuhan pengguna yang dipilih.
+Lakukan evaluasi kembali terhadap ERD sebelum diimplementasikan. Apabila ditemukan kesalahan pada entitas, atribut, Primary Key, Foreign Key, relasi, atau kardinalitas, mahasiswa diperbolehkan melakukan perbaikan dengan memberikan penjelasan mengenai perubahan yang dilakukan.
 
-## Tahapan Proyek
+---
 
-### 1. Identifikasi Masalah
+# Instruksi Tugas
 
-Jelaskan:
+## 1. Implementasi Basis Data
 
-- latar belakang masalah;
-- pihak yang menggunakan sistem;
-- proses yang sedang berjalan;
-- data yang perlu disimpan;
-- masalah pada pencatatan saat ini;
-- informasi atau laporan yang dibutuhkan.
+Implementasikan ERD hasil Tugas 1 ke dalam DBMS yang telah ditentukan.
 
-Jika memungkinkan, kebutuhan diperoleh dari observasi atau wawancara sederhana dengan calon pengguna.
+Setiap entitas pada ERD harus diterjemahkan menjadi tabel yang sesuai dengan memperhatikan:
 
-### 2. Aturan Bisnis
+* Nama tabel
+* Nama kolom/atribut
+* Tipe data
+* Panjang data jika diperlukan
+* Primary Key (PK)
+* Foreign Key (FK)
+* `NOT NULL`
+* `UNIQUE`
+* `DEFAULT`
+* Constraint lain yang diperlukan
 
-Tuliskan aturan bisnis yang jelas dan dapat diterjemahkan menjadi model data.
+Struktur tabel yang dibuat harus konsisten dengan ERD dan kebutuhan client yang telah dianalisis pada Tugas 1.
+
+---
+
+# 2. Data Definition Language (DDL)
+
+Dokumentasikan seluruh perintah **DDL** yang digunakan untuk membangun struktur basis data.
+
+Minimal mencakup:
+
+### a. CREATE DATABASE
+
+Buat database sesuai dengan studi kasus yang dipilih.
+
+### b. CREATE TABLE
+
+Buat seluruh tabel berdasarkan entitas yang terdapat pada ERD.
+
+Setiap tabel harus memiliki **Primary Key** dan menggunakan **Foreign Key** apabila memiliki hubungan dengan tabel lainnya.
+
+### c. ALTER TABLE
+
+Lakukan minimal satu perubahan struktur tabel menggunakan `ALTER TABLE`.
+
+Perubahan dapat berupa penambahan kolom, perubahan constraint, atau perubahan lain yang relevan.
+
+Mahasiswa harus menjelaskan **alasan perubahan tersebut**.
+
+### d. Dokumentasi Struktur Database
+
+Dokumentasikan hasil implementasi struktur database dan tunjukkan bahwa seluruh tabel, Primary Key, Foreign Key, serta relasi telah berhasil dibuat.
+
+---
+
+# 3. Data Manipulation Language (DML)
+
+Setelah struktur database selesai dibuat, lakukan pengelolaan data menggunakan **DML**.
+
+## a. INSERT
+
+Masukkan data ke dalam seluruh tabel.
+
+Data yang dimasukkan sebaiknya menggunakan atau menyesuaikan **data yang diperoleh dari client/mitra pada Tugas 1**.
+
+Apabila data nyata tidak mencukupi, mahasiswa diperbolehkan menggunakan data tambahan/dummy yang masih sesuai dengan karakteristik studi kasus.
+
+Setiap tabel harus memiliki data yang cukup untuk menunjukkan hubungan antar tabel.
+
+## b. SELECT
+
+Buat beberapa query untuk menampilkan informasi dari database.
+
+Query tidak hanya menampilkan seluruh isi tabel, tetapi harus dapat menjawab kebutuhan informasi client.
 
 Contoh:
 
-> Satu pelanggan dapat membuat banyak pesanan, tetapi setiap pesanan harus dimiliki tepat satu pelanggan.
+> Client ingin mengetahui daftar produk yang memiliki stok kurang dari 10.
 
-Aturan bisnis harus menjelaskan hubungan, kewajiban data, batasan, dan kondisi penting dalam studi kasus.
+> Client ingin mengetahui seluruh transaksi yang dilakukan pada periode tertentu.
 
-### 3. ERD Awal
+> Client ingin mengetahui produk yang termasuk dalam kategori tertentu.
 
-Buat ERD awal yang memuat:
+Setiap query harus disertai dengan **kebutuhan informasi yang ingin dijawab**.
 
-- entitas;
-- atribut;
-- primary/candidate key;
-- relasi;
-- derajat relasi;
-- kardinalitas;
-- partisipasi wajib atau opsional.
+## c. UPDATE
 
-### 4. Optimasi ERD
+Lakukan perubahan terhadap data yang telah tersimpan menggunakan perintah `UPDATE`.
 
-Periksa dan perbaiki ERD berdasarkan:
+Jelaskan kondisi yang menyebabkan data tersebut perlu diperbarui.
 
-- redundansi data;
-- entitas kuat dan lemah;
-- pemilihan primary dan alternative key;
-- atribut multivalue, composite, atau derived;
-- atribut yang sebenarnya menjadi milik relasi;
-- relasi N:M;
-- repeating columns;
-- kebutuhan generalisasi atau spesialisasi;
-- fleksibilitas model jika data berkembang.
+Contoh:
 
-Sertakan diagram sebelum dan sesudah optimasi serta alasan setiap perubahan.
+> Harga suatu produk mengalami perubahan sehingga data harga pada database harus diperbarui.
 
-### 5. Normalisasi
+## d. DELETE
 
-Pilih sedikitnya satu data transaksi utama dari studi kasus, kemudian tunjukkan:
+Lakukan penghapusan data menggunakan perintah `DELETE`.
 
-1. bentuk data belum normal atau UNF;
-2. functional dependency;
-3. proses menuju 1NF;
-4. proses menuju 2NF;
-5. proses menuju 3NF;
-6. pemeriksaan BCNF bila relevan;
-7. primary key dan foreign key hasil normalisasi;
-8. alasan dekomposisi tetap lossless.
+Jelaskan alasan data tersebut dapat atau perlu dihapus serta perhatikan hubungan data dengan tabel lainnya.
 
-### 6. Implementasi MySQL dengan DDL
+---
 
-Buat skrip SQL untuk:
+# 4. Query Antar Tabel
 
-- membuat database;
-- membuat seluruh tabel;
-- menentukan tipe data;
-- menentukan primary key;
-- menentukan foreign key;
-- menggunakan `NOT NULL`, `UNIQUE`, `CHECK`, atau `DEFAULT` sesuai kebutuhan;
-- menentukan aturan referensial dengan alasan yang jelas.
+Buat query yang melibatkan **minimal dua tabel yang saling berelasi** menggunakan `JOIN`.
 
-Skrip harus dapat dijalankan dari database kosong.
+Query harus dibuat berdasarkan kebutuhan informasi pada studi kasus, bukan hanya untuk menunjukkan penggunaan sintaks SQL.
 
-### 7. Pengisian Data dengan DML
+Contoh kebutuhan:
 
-Isi data dummy yang cukup untuk menunjukkan seluruh hubungan dan kondisi penting. Data harus mencakup:
+> Client ingin melihat nama pelanggan beserta transaksi yang pernah dilakukan.
 
-- data yang memiliki pasangan;
-- data yang belum memiliki pasangan bila relasi mengizinkan;
-- beberapa transaksi;
-- beberapa detail transaksi;
-- variasi data yang cukup untuk pengujian query.
+Mahasiswa harus menentukan tabel mana yang perlu dihubungkan untuk menghasilkan informasi tersebut.
 
-Gunakan data sintetis dan jangan menggunakan data pribadi nyata.
+---
 
-### 8. Operasi DML
+# 5. Dokumentasi DDL dan DML
 
-Demonstrasikan:
+Setiap proses implementasi harus didokumentasikan dengan format:
 
-- `INSERT`;
-- `SELECT`;
-- `UPDATE` dengan kondisi yang aman;
-- `DELETE` dengan kondisi yang aman;
-- bukti sebelum dan sesudah perubahan.
+**Kebutuhan/Tujuan → Query SQL → Hasil Eksekusi → Penjelasan**
 
-### 9. JOIN Query
+Contoh:
 
-Buat query yang sesuai dengan kebutuhan studi kasus, mencakup:
+**Kebutuhan:**
+Menampilkan produk yang memiliki stok kurang dari 10.
 
-- INNER JOIN;
-- LEFT JOIN;
-- RIGHT JOIN atau LEFT JOIN dengan posisi tabel dibalik;
-- pencarian data tanpa pasangan;
-- JOIN lebih dari dua tabel;
-- JOIN dengan filter;
-- JOIN dengan agregasi dan `GROUP BY`.
+**Query SQL:**
 
-Setiap query harus disertai pertanyaan bisnis dan penjelasan hasilnya.
+```sql
+SELECT nama_produk, stok
+FROM produk
+WHERE stok < 10;
+```
 
-### 10. Pengujian Constraint
+**Hasil:**
+Lampirkan screenshot atau hasil eksekusi query.
 
-Lakukan beberapa uji data tidak valid, misalnya:
+**Penjelasan:**
+Query digunakan untuk membantu client mengetahui produk yang stoknya perlu segera ditambah.
 
-- primary key duplikat;
-- foreign key yang tidak tersedia;
-- nilai wajib yang dikosongkan;
-- nilai di luar domain CHECK;
-- pelanggaran UNIQUE;
-- penghapusan data induk yang masih digunakan.
+Gunakan format dokumentasi tersebut untuk query-query penting yang dibuat.
 
-Catat query, pesan error, constraint yang bekerja, dan kesimpulannya.
+---
 
-## Berkas yang Dikumpulkan
+# 6. Kesesuaian ERD dengan Implementasi
 
-1. laporan proyek;
-2. ERD awal;
-3. ERD hasil optimasi;
-4. proses normalisasi;
-5. kamus data;
-6. skrip pembuatan database dan tabel;
-7. skrip data dummy;
-8. skrip DML dan JOIN;
-9. hasil pengujian constraint;
-10. petunjuk menjalankan proyek;
-11. pembagian kontribusi apabila dikerjakan berkelompok.
+Bandingkan kembali **ERD pada Tugas 1 dengan database yang telah diimplementasikan**.
 
-## Struktur Laporan
+Pastikan:
 
-1. identitas proyek;
-2. latar belakang dan masalah;
-3. kebutuhan pengguna;
-4. aturan bisnis;
-5. ERD awal;
-6. optimasi ERD;
-7. normalisasi;
-8. skema fisik dan kamus data;
-9. implementasi DDL;
-10. implementasi DML;
-11. JOIN dan informasi yang dihasilkan;
-12. pengujian constraint;
-13. kendala dan penyelesaian;
-14. kesimpulan;
-15. kontribusi anggota.
+* Setiap entitas telah menjadi tabel.
+* Setiap atribut telah menjadi kolom yang sesuai.
+* Primary Key telah diterapkan.
+* Foreign Key telah diterapkan.
+* Relasi antar tabel sesuai dengan ERD.
+* Kardinalitas dapat direpresentasikan melalui struktur tabel.
+* Relasi M:N telah diselesaikan menggunakan tabel penghubung.
+* Tipe data sesuai dengan data yang akan disimpan.
 
-## Demonstrasi Proyek
+Jika terdapat perubahan dari ERD Tugas 1, jelaskan perubahan dan alasannya.
 
-Pada saat penilaian, mahasiswa harus dapat:
+---
 
-- membuat database dari skrip;
-- menunjukkan tabel serta hubungan;
-- menjalankan query yang diminta;
-- mengubah atau memperbaiki query sederhana;
-- menjelaskan ERD dan normalisasi;
-- menunjukkan constraint yang menjaga data;
-- menjelaskan hasil JOIN.
+# Hasil Akhir yang Dikumpulkan
 
-## Interview Individual
+Susun laporan Tugas 2 dengan urutan:
 
-Interview menjadi bagian penting dari penilaian. Pertanyaan dapat mencakup:
+1. **Judul Studi Kasus**
+2. **ERD Hasil Tugas 1**
+3. **ERD Hasil Revisi** *(jika terdapat perubahan)*
+4. **Skema/Struktur Tabel**
+5. **Implementasi DDL**
 
-- alasan memilih entitas dan atribut;
-- alasan pemilihan key;
-- cara membaca kardinalitas;
-- perubahan sebelum dan sesudah optimasi;
-- functional dependency dan tahapan normalisasi;
-- alasan penempatan foreign key;
-- perbedaan DDL dan DML;
-- prediksi hasil JOIN;
-- penjelasan query dan constraint;
-- bagian yang dikerjakan mahasiswa;
-- perubahan kecil yang harus dilakukan langsung saat interview.
+   * CREATE DATABASE
+   * CREATE TABLE
+   * Primary Key dan Foreign Key
+   * Constraint
+   * ALTER TABLE
+6. **Implementasi DML**
 
-Mahasiswa harus memahami keseluruhan proyek, bukan hanya bagian yang dinyatakan sebagai kontribusinya.
+   * INSERT
+   * SELECT
+   * UPDATE
+   * DELETE
+7. **Implementasi Query Antar Tabel (JOIN)**
+8. **Dokumentasi Hasil Eksekusi Query**
+9. **Analisis Kesesuaian ERD dengan Database**
+10. **Kesimpulan**
+11. **Lampiran Script SQL Lengkap**
 
-## Kriteria Penilaian
+---
 
-| Komponen | Bobot |
-|---|---:|
-| Analisis masalah dan aturan bisnis | 10% |
-| ERD awal dan optimasi | 15% |
-| Normalisasi | 15% |
-| Implementasi DDL dan constraint | 15% |
-| DML, data uji, dan JOIN | 15% |
-| Pengujian serta dokumentasi | 10% |
-| Demonstrasi proyek | 5% |
-| Pemahaman saat interview individual | 15% |
-| **Total** | **100%** |
+# Ketentuan Tugas
 
-## Penilaian Interview
+1. Tugas 2 **wajib menggunakan studi kasus dari Tugas 1**.
+2. Database yang dibuat harus berdasarkan ERD hasil analisis kebutuhan client.
+3. Seluruh tabel harus memiliki Primary Key.
+4. Foreign Key harus digunakan pada tabel yang memiliki hubungan.
+5. Data yang digunakan diutamakan berasal dari hasil pengumpulan data pada Tugas 1.
+6. Setiap penggunaan DDL dan DML harus didokumentasikan.
+7. Query `SELECT` dan `JOIN` harus memiliki tujuan yang berkaitan dengan kebutuhan informasi client.
+8. Mahasiswa harus mampu menjelaskan hubungan antara **kebutuhan client → ERD → tabel → SQL → informasi yang dihasilkan**.
 
-Interview dinilai dari:
+### Alur Tugas
 
-- ketepatan jawaban;
-- kemampuan menggunakan bahasa sendiri;
-- kemampuan menjelaskan alasan desain;
-- kemampuan membaca serta memperbaiki ERD atau query;
-- konsistensi jawaban dengan proyek yang dikumpulkan;
-- penguasaan keseluruhan proyek;
-- bukti kontribusi dan kesungguhan.
-
-Jika mahasiswa tidak dapat menjelaskan isi proyek, nilai proyek dapat dikurangi meskipun berkas dan aplikasi dapat dijalankan.
-
-## Ketentuan Keaslian
-
-- Proyek harus berasal dari analisis mahasiswa.
-- Referensi diperbolehkan, tetapi sumber harus dicantumkan.
-- Penggunaan kode atau rancangan dari sumber lain harus dipahami dan dijelaskan.
-- Proyek antarkelompok tidak boleh identik.
-- Data pribadi dan kredensial tidak boleh disimpan dalam repository.
-- Plagiarisme mengikuti ketentuan akademik yang berlaku.
-
-## Checklist Proyek
-
-- [ ] Masalah dan pengguna dijelaskan.
-- [ ] Aturan bisnis tersedia.
-- [ ] ERD awal dan hasil optimasi tersedia.
-- [ ] Normalisasi sampai 3NF dijelaskan.
-- [ ] PK dan FK konsisten.
-- [ ] Skrip dapat dijalankan dari database kosong.
-- [ ] Data dummy memadai.
-- [ ] DML dan JOIN lengkap.
-- [ ] Pengujian constraint terdokumentasi.
-- [ ] Laporan dan petunjuk penggunaan tersedia.
-- [ ] Kontribusi anggota dicatat.
-- [ ] Setiap mahasiswa siap mengikuti interview.
+**Hasil Tugas 1 → ERD → Skema Relasional → Implementasi Tabel → DDL → Pengisian Data → DML → Query Kebutuhan Client → Dokumentasi**
