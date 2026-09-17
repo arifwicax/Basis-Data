@@ -1,4 +1,4 @@
-tidak # Tugas 2 — Proyek Perancangan dan Implementasi Basis Data
+# Tugas 2 — Proyek Perancangan dan Implementasi Basis Data
 
 **Mata kuliah:** Basis Data (SI2514010)
 **Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.
