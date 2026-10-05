@@ -16,6 +16,10 @@ Setelah mempelajari materi ini, mahasiswa diharapkan mampu:
 6. menentukan primary key (PK) dan foreign key (FK) pada tabel hasil; dan
 7. membuktikan bahwa informasi awal dapat dibentuk kembali menggunakan `JOIN`.
 
+## Materi Pendukung: Penjelasan Normalisasi Tabel Penjualan
+
+Lihat [penjelasan normalisasi tabel penjualan](assets/week-6-normalisasi/penjelasan-normalisasi-penjualan.md) untuk contoh bertahap mengenai 1NF, 2NF, dan 3NF.
+
 ## 2. Peta Konsep
 
 ```mermaid
