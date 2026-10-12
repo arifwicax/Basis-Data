@@ -20,6 +20,8 @@ Disusun untuk memenuhi tugas mata kuliah **Basis Data (SI2514010)**
 **Dosen Pengampu:**  
 Arif Wicaksono Septyanto, S.Kom., M.Kom.
 
+**Sifat pengerjaan:** Mandiri/Individu
+
 <br><br>
 
 **Disusun oleh:**
@@ -28,7 +30,7 @@ Arif Wicaksono Septyanto, S.Kom., M.Kom.
 |---|---|---|
 | [Nama mahasiswa] | [NIM] | [Kelas] |
 
-Jika dikerjakan berkelompok, tambahkan satu baris untuk setiap anggota. Isi **Nama** dengan nama lengkap, **NIM** dengan nomor induk mahasiswa, dan **Kelas** dengan kelas mata kuliah.
+Laporan ini dikerjakan secara **mandiri/individu**. Isi **Nama** dengan nama lengkap mahasiswa, **NIM** dengan nomor induk mahasiswa, dan **Kelas** dengan kelas mata kuliah.
 
 <br>
 
