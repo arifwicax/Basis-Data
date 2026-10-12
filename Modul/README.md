@@ -1,4 +1,6 @@
-# Modul Perkuliahan Basis Data
+# Basis Data — Modul Perkuliahan
+
+Repository modul perkuliahan untuk mata kuliah **Basis Data (SI2514010)**. Halaman ini berisi identitas mata kuliah, dosen pengampu, capaian pembelajaran, dan peta materi per minggu.
 
 ## Identitas Mata Kuliah
 
@@ -12,7 +14,17 @@
 | RPS | Tahun ajaran 2025–2030, terbit 1 Agustus 2025 |
 | Prasyarat | SI2514009 – Matematika Diskrit 2 |
 
-## Fokus Capaian Modul
+## Dosen Pengampu
+
+**Arif Wicaksono Septyanto, S.Kom., M.Kom.**
+
+Dosen pengampu memberikan arahan perkuliahan, materi pembelajaran, tugas, serta evaluasi yang tercantum dalam modul Basis Data.
+
+## Deskripsi Mata Kuliah
+
+Mata kuliah ini membahas konsep dasar dan penerapan basis data, mulai dari analisis kebutuhan, pemodelan ERD, normalisasi, implementasi SQL, pengelolaan transaksi, keamanan, backup, hingga pengenalan teknologi basis data modern.
+
+## Fokus Pembelajaran
 
 Struktur materi menggunakan **Sub-CPMK mingguan dari RPS** sebagai acuan langsung. CPL dan CPMK tidak diulang pada setiap modul agar tujuan belajar, materi, aktivitas, dan asesmen tetap terarah pada kemampuan akhir minggu terkait.
 
@@ -41,6 +53,6 @@ Struktur materi menggunakan **Sub-CPMK mingguan dari RPS** sebagai acuan langsun
 
 Studi kasus yang sama dikembangkan bertahap: kebutuhan dan *business rule* → ERD → normalisasi → implementasi MySQL → CRUD/JOIN → aplikasi dan visualisasi → transaksi dan keamanan → backup → eksplorasi NoSQL → presentasi. Dengan alur ini, setiap tugas menjadi bagian dari proyek akhir, bukan pekerjaan yang terpisah.
 
-## Sumber Materi
+## Catatan
 
-Modul mempertahankan materi yang telah tersedia dan menambahkan materi dari seluruh slide pada folder `Slide`. Acuan utama mengikuti daftar pustaka RPS: Bagui & Earp (2023), Smirnova & Tezuysal (2022), Uzayr (2022), serta Pettit & Cosentino (2022).
+Materi pada setiap minggu digunakan sebagai panduan pembelajaran mata kuliah Basis Data dan dapat dikembangkan sesuai arahan dosen pengampu.

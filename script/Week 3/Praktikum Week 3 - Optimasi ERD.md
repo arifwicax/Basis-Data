@@ -1,7 +1,7 @@
 # Praktikum Minggu 3 — Optimasi ERD
 
-**Mata kuliah:** Basis Data (SI2514010)  
-**Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.  
+**Mata kuliah:** Basis Data (SI2514010)
+**Dosen pengampu:** Arif Wicaksono Septyanto, S.Kom., M.Kom.
 **Sub-CPMK:** Mahasiswa mampu menganalisis kebutuhan basis data dan merancang basis data (C4, C6).
 
 ## 1. Tujuan Praktikum
@@ -12,14 +12,14 @@ Mahasiswa mampu mengevaluasi ERD awal, menemukan redundansi dan struktur kaku, m
 
 Durasi praktikum: **170 menit**.
 
-| Kegiatan | Waktu |
-|---|---:|
-| Pretest dan persiapan | 15 menit |
-| Audit ERD awal | 25 menit |
-| Latihan teknik optimasi | 45 menit |
-| Optimasi studi kasus | 50 menit |
+| Kegiatan                  |    Waktu |
+| ------------------------- | -------: |
+| Pretest dan persiapan     | 15 menit |
+| Audit ERD awal            | 25 menit |
+| Latihan teknik optimasi   | 45 menit |
+| Optimasi studi kasus      | 50 menit |
 | Validasi sebelum–sesudah | 25 menit |
-| Kesimpulan | 10 menit |
+| Kesimpulan                | 10 menit |
 
 ## 3. Perangkat dan Input
 
@@ -42,16 +42,16 @@ Simpan file sumber diagram dan ekspor versi sebelum serta sesudah optimasi.
 
 Gunakan ERD Minggu 2 dan isi tabel:
 
-| Temuan | Lokasi | Dampak | Prioritas | Rencana perbaikan |
-|---|---|---|---|---|
-| Data referensi berulang | ... | ... | ... | ... |
-| Key tidak stabil | ... | ... | ... | ... |
-| Atribut salah tempat | ... | ... | ... | ... |
-| Relasi N:M | ... | ... | ... | ... |
-| Atribut multivalue | ... | ... | ... | ... |
-| Kolom berulang | ... | ... | ... | ... |
-| Domain terlalu sempit | ... | ... | ... | ... |
-| Kandidat generalisasi | ... | ... | ... | ... |
+| Temuan                  | Lokasi | Dampak | Prioritas | Rencana perbaikan |
+| ----------------------- | ------ | ------ | --------- | ----------------- |
+| Data referensi berulang | ...    | ...    | ...       | ...               |
+| Key tidak stabil        | ...    | ...    | ...       | ...               |
+| Atribut salah tempat    | ...    | ...    | ...       | ...               |
+| Relasi N:M              | ...    | ...    | ...       | ...               |
+| Atribut multivalue      | ...    | ...    | ...       | ...               |
+| Kolom berulang          | ...    | ...    | ...       | ...               |
+| Domain terlalu sempit   | ...    | ...    | ...       | ...               |
+| Kandidat generalisasi   | ...    | ...    | ...       | ...               |
 
 ## 6. Tahap B — Optimasi Asal Sekolah
 
@@ -84,11 +84,11 @@ Jelaskan apakah Sekolah merupakan entitas kuat atau lemah dan alasannya.
 
 Perhatikan data Hobi:
 
-| Hobi | Keterangan |
-|---|---|
-| Membaca | ... |
-| Menulis | ... |
-| Main Musik | ... |
+| Hobi       | Keterangan |
+| ---------- | ---------- |
+| Membaca    | ...        |
+| Menulis    | ...        |
+| Main Musik | ...        |
 
 Tugas:
 
@@ -162,12 +162,12 @@ Terapkan sedikitnya lima pemeriksaan berikut pada ERD kelompok:
 Untuk setiap perubahan, isi tabel:
 
 | No. | Sebelum | Masalah | Sesudah | Alasan | Dampak |
-|---:|---|---|---|---|---|
-| 1 | ... | ... | ... | ... | ... |
-| 2 | ... | ... | ... | ... | ... |
-| 3 | ... | ... | ... | ... | ... |
-| 4 | ... | ... | ... | ... | ... |
-| 5 | ... | ... | ... | ... | ... |
+| --: | ------- | ------- | ------- | ------ | ------ |
+|   1 | ...     | ...     | ...     | ...    | ...    |
+|   2 | ...     | ...     | ...     | ...    | ...    |
+|   3 | ...     | ...     | ...     | ...    | ...    |
+|   4 | ...     | ...     | ...     | ...    | ...    |
+|   5 | ...     | ...     | ...     | ...    | ...    |
 
 ## 12. Validasi dengan Skenario
 
@@ -183,13 +183,13 @@ Uji model setelah optimasi:
 
 Catat hasil:
 
-| Skenario | Model lama | Model baru | Lulus? | Catatan |
-|---|---|---|:---:|---|
-| Insert | ... | ... | | ... |
-| Update | ... | ... | | ... |
-| Delete | ... | ... | | ... |
-| Pertumbuhan | ... | ... | | ... |
-| Laporan | ... | ... | | ... |
+| Skenario    | Model lama | Model baru | Lulus? | Catatan |
+| ----------- | ---------- | ---------- | :----: | ------- |
+| Insert      | ...        | ...        |        | ...     |
+| Update      | ...        | ...        |        | ...     |
+| Delete      | ...        | ...        |        | ...     |
+| Pertumbuhan | ...        | ...        |        | ...     |
+| Laporan     | ...        | ...        |        | ...     |
 
 ## 13. Checklist Kualitas
 
@@ -237,19 +237,19 @@ Setiap gambar harus dapat dibaca dan setiap perubahan harus memiliki alasan. Jan
 
 ## 16. Rubrik Penilaian
 
-| Komponen | Bobot |
-|---|---:|
-| Audit masalah ERD | 15% |
-| Pemahaman entitas dan key | 15% |
-| Penempatan atribut dan relasi | 15% |
-| Generalisasi dan fleksibilitas | 15% |
-| Perbaikan repeating columns/N:M | 15% |
-| Validasi skenario | 15% |
-| Argumentasi dan laporan | 10% |
-| **Total** | **100%** |
+| Komponen                        |          Bobot |
+| ------------------------------- | -------------: |
+| Audit masalah ERD               |            15% |
+| Pemahaman entitas dan key       |            15% |
+| Penempatan atribut dan relasi   |            15% |
+| Generalisasi dan fleksibilitas  |            15% |
+| Perbaikan repeating columns/N:M |            15% |
+| Validasi skenario               |            15% |
+| Argumentasi dan laporan         |            10% |
+| **Total**                 | **100%** |
 
 ## 17. Kriteria Keberhasilan
 
 Praktikum berhasil jika mahasiswa dapat menunjukkan bahwa ERD baru lebih efisien dan fleksibel melalui bukti perubahan struktur serta skenario insert, update, delete, pertumbuhan, dan laporan.
 
-Kembali ke [Modul Minggu 3 — Optimasi ERD](../../Modul/Week%203%20-%20Optimasi%20ERD.md).
+Kembali ke [Modul Minggu 3 — Optimasi ERD](<../../Modul/Week%203%20-%20Optimasi%20ERD.md>).
