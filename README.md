@@ -9,8 +9,6 @@ Repository ini berisi materi, modul, tugas, dan template laporan untuk mata kuli
 | `Modul/` | Materi pembelajaran setiap minggu |
 | `Tugas/` | Instruksi tugas mata kuliah |
 | `Template Laporan/` | Template laporan gabungan Tugas 1 dan Tugas 2 |
-| `Kuis/` | Materi lokal dan tidak diunggah ke GitHub |
-| `UTS dan UAS/` | Materi lokal dan tidak diunggah ke GitHub |
 
 ## Cakupan Tugas
 
@@ -21,17 +19,6 @@ Tugas dalam repository ini mencakup:
 3. Implementasi basis data menggunakan DDL dan DML.
 4. Penyusunan query `SELECT`, `UPDATE`, `DELETE`, dan `JOIN`.
 5. Dokumentasi hasil implementasi dan evaluasi kesesuaian ERD.
-
-## Catatan Privasi
-
-Folder berikut hanya digunakan secara lokal dan tidak boleh diunggah ke GitHub:
-
-```text
-/Kuis/
-/UTS dan UAS/
-```
-
-Aturan tersebut tercantum dalam `.gitignore`. Jangan menghapus atau mengubah aturan tersebut tanpa pemeriksaan terlebih dahulu.
 
 ## Mata Kuliah
 
