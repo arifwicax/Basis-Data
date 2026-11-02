@@ -1,0 +1,129 @@
+<mxfile host="app.diagrams.net">
+    <diagram name="ERD Chen Toko Daring" id="erd-chen-soal2-1">
+        <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- ===== Entitas kuat ===== -->
+                <mxCell id="pelanggan" parent="1" value="Pelanggan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1">
+                    <mxGeometry x="100" y="300" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="pesanan" parent="1" value="Pesanan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1">
+                    <mxGeometry x="600" y="300" width="120" height="50" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Entitas lemah: persegi panjang ganda ===== -->
+                <mxCell id="item_pesanan_luar" parent="1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;" vertex="1">
+                    <mxGeometry x="580" y="620" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="item_pesanan" parent="1" value="Item_Pesanan" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" vertex="1">
+                    <mxGeometry x="585" y="625" width="150" height="50" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Relasi ===== -->
+                <mxCell id="rel_melakukan" parent="1" value="melakukan" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1">
+                    <mxGeometry x="340" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_memiliki_luar" parent="1" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d6b656;" vertex="1">
+                    <mxGeometry x="592" y="462" width="136" height="76" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_memiliki" parent="1" value="memiliki" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1">
+                    <mxGeometry x="600" y="470" width="120" height="60" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Pelanggan ===== -->
+                <mxCell id="a_pelanggan_id" parent="1" value="id_pelanggan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" vertex="1">
+                    <mxGeometry x="20" y="170" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pelanggan_no" parent="1" value="no_pelanggan (AK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="200" y="150" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pelanggan_email" parent="1" value="email (AK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="20" y="410" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pelanggan_nama" parent="1" value="nama" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="200" y="430" width="160" height="46" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Pesanan ===== -->
+                <mxCell id="a_pesanan_id" parent="1" value="id_pesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" vertex="1">
+                    <mxGeometry x="560" y="170" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pesanan_tgl" parent="1" value="tgl_pesanan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="740" y="160" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pesanan_total" parent="1" value="total_harga" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="760" y="260" width="160" height="46" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Item_Pesanan (partial key diberi garis putus-putus) ===== -->
+                <mxCell id="a_item_urut" parent="1" value="no_urut_item" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="400" y="600" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_item_urut_garis" parent="1" style="dashed=1;endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="440" y="638" as="sourcePoint"/>
+                        <mxPoint x="520" y="638" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="a_item_jumlah" parent="1" value="jumlah" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="420" y="700" width="160" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_item_harga" parent="1" value="harga_satuan" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" vertex="1">
+                    <mxGeometry x="780" y="700" width="160" height="46" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Garis atribut ke entitas ===== -->
+                <mxCell id="e_a_pelanggan_id" parent="1" source="a_pelanggan_id" target="pelanggan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pelanggan_no" parent="1" source="a_pelanggan_no" target="pelanggan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pelanggan_email" parent="1" source="a_pelanggan_email" target="pelanggan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pelanggan_nama" parent="1" source="a_pelanggan_nama" target="pelanggan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pesanan_id" parent="1" source="a_pesanan_id" target="pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pesanan_tgl" parent="1" source="a_pesanan_tgl" target="pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pesanan_total" parent="1" source="a_pesanan_total" target="pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_item_urut" parent="1" source="a_item_urut" target="item_pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_item_jumlah" parent="1" source="a_item_jumlah" target="item_pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_item_harga" parent="1" source="a_item_harga" target="item_pesanan" style="endArrow=none;html=1;rounded=0;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Garis relasi. Garis tunggal = parsial, garis ganda (shape=link) = total ===== -->
+
+                <!-- Pelanggan (parsial) 1 — melakukan — N Pesanan (total) -->
+                <mxCell id="e_pelanggan_melakukan" parent="1" source="pelanggan" target="rel_melakukan" value="1" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_melakukan_pesanan" parent="1" source="rel_melakukan" target="pesanan" value="N" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- Pesanan (parsial) 1 — memiliki (identifikasi) — N Item_Pesanan (total) -->
+                <mxCell id="e_pesanan_memiliki" parent="1" source="pesanan" target="rel_memiliki" value="1" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_memiliki_item" parent="1" source="rel_memiliki" target="item_pesanan" value="N" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

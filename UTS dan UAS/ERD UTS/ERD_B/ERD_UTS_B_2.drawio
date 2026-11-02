@@ -1,0 +1,139 @@
+<mxfile host="65bd71144e">
+    <diagram id="erd-uts-b-2" name="ERD Soal 2">
+        <mxGraphModel dx="1400" dy="1013" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="pasien" parent="1" style="shape=rectangle;whiteSpace=wrap;html=1;fontStyle=1;" value="PASIEN" vertex="1">
+                    <mxGeometry height="65" width="190" x="120" y="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="kunjungan" parent="1" style="shape=rectangle;whiteSpace=wrap;html=1;fontStyle=1;" value="KUNJUNGAN" vertex="1">
+                    <mxGeometry height="65" width="210" x="600" y="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="detail" parent="1" style="shape=rectangle;whiteSpace=wrap;html=1;fontStyle=1;double=1;" value="DETAIL_RESEP" vertex="1">
+                    <mxGeometry height="65" width="230" x="1100" y="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="r1" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fontStyle=1;" value="MEMILIKI" vertex="1">
+                    <mxGeometry height="55" width="130" x="390" y="395" as="geometry"/>
+                </mxCell>
+                <mxCell id="r2" parent="1" style="shape=rhombus;whiteSpace=wrap;html=1;fontStyle=1;double=1;" value="MENGHASILKAN" vertex="1">
+                    <mxGeometry height="55" width="170" x="875" y="395" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa1" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="id_pasien (PK)" vertex="1">
+                    <mxGeometry height="48" width="180" y="213" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa2" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="no_rekam_medis (AK)" vertex="1">
+                    <mxGeometry height="48" width="200" x="180" y="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa3" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="no_identitas (AK)" vertex="1">
+                    <mxGeometry height="48" width="175" x="380" y="213" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa4" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="nama" vertex="1">
+                    <mxGeometry height="48" width="105" x="140" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa5" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="tgl_lahir" vertex="1">
+                    <mxGeometry height="48" width="115" x="260" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="pa6" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="alamat" vertex="1">
+                    <mxGeometry height="48" width="105" x="375" y="318" as="geometry"/>
+                </mxCell>
+                <mxCell id="ku1" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="id_kunjungan (PK)" vertex="1">
+                    <mxGeometry height="48" width="180" x="500" y="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="ku2" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="tgl_kunjungan" vertex="1">
+                    <mxGeometry height="48" width="145" x="810" y="197" as="geometry"/>
+                </mxCell>
+                <mxCell id="ku3" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="keluhan" vertex="1">
+                    <mxGeometry height="48" width="110" x="810" y="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="ku4" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="id_pasien (FK)" vertex="1">
+                    <mxGeometry height="48" width="145" x="655" y="228" as="geometry"/>
+                </mxCell>
+                <mxCell id="de1" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="id_kunjungan (PK/FK)" vertex="1">
+                    <mxGeometry height="48" width="200" x="930" y="530" as="geometry"/>
+                </mxCell>
+                <mxCell id="de2" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fontStyle=4;" value="no_item (PK parsial)" vertex="1">
+                    <mxGeometry height="48" width="185" x="1300" y="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="de3" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="nama_obat" vertex="1">
+                    <mxGeometry height="48" width="120" x="1050" y="590" as="geometry"/>
+                </mxCell>
+                <mxCell id="de4" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="dosis" vertex="1">
+                    <mxGeometry height="48" width="100" x="1165" y="630" as="geometry"/>
+                </mxCell>
+                <mxCell id="de5" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;" value="jumlah" vertex="1">
+                    <mxGeometry height="48" width="105" x="1290" y="630" as="geometry"/>
+                </mxCell>
+                <mxCell id="c1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=18;" value="1" vertex="1">
+                    <mxGeometry height="30" width="30" x="325" y="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="c2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=18;" value="N" vertex="1">
+                    <mxGeometry height="30" width="30" x="535" y="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="c3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=18;" value="1" vertex="1">
+                    <mxGeometry height="30" width="30" x="825" y="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="c4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=18;" value="N" vertex="1">
+                    <mxGeometry height="30" width="30" x="1060" y="405" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" edge="1" parent="1" source="pasien" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="r1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="r1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="kunjungan">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="kunjungan" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="r2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" edge="1" parent="1" source="r2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="detail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a1" edge="1" parent="1" source="pasien" target="pa1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a2" edge="1" parent="1" source="pasien" target="pa2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a3" edge="1" parent="1" source="pasien" target="pa3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a4" edge="1" parent="1" source="pasien" target="pa4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a5" edge="1" parent="1" source="pasien" target="pa5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a6" edge="1" parent="1" source="pasien" target="pa6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="k1" edge="1" parent="1" source="kunjungan" target="ku1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="k2" edge="1" parent="1" source="kunjungan" target="ku2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="k3" edge="1" parent="1" source="kunjungan" target="ku3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="k4" edge="1" parent="1" source="kunjungan" target="ku4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d1" edge="1" parent="1" source="detail" target="de1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d2" edge="1" parent="1" source="detail" target="de2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d3" edge="1" parent="1" source="detail" target="de3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d4" edge="1" parent="1" source="detail" target="de4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="d5" edge="1" parent="1" source="detail" target="de5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

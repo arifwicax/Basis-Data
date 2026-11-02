@@ -1,0 +1,207 @@
+<mxfile host="65bd71144e">
+    <diagram name="ERD Chen Donasi" id="erd-chen-donasi-1">
+        <mxGraphModel dx="1508" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="800" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- ===== Entitas ===== -->
+                <mxCell id="donatur" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Donatur" vertex="1">
+                    <mxGeometry height="50" width="120" x="190" y="275" as="geometry"/>
+                </mxCell>
+                <mxCell id="donasi" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Donasi" vertex="1">
+                    <mxGeometry height="50" width="120" x="625" y="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="donasi_proyek" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Donasi_Proyek" vertex="1">
+                    <mxGeometry height="50" width="150" x="785" y="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="proyek" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Proyek" vertex="1">
+                    <mxGeometry height="50" width="120" x="990" y="275" as="geometry"/>
+                </mxCell>
+                <mxCell id="pegawai" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" value="Pegawai" vertex="1">
+                    <mxGeometry height="50" width="120" x="1390" y="275" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Relasi ===== -->
+                <mxCell id="rel_memberikan" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="memberikan" vertex="1">
+                    <mxGeometry height="60" width="120" x="390" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_memiliki" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="memiliki" vertex="1">
+                    <mxGeometry height="60" width="120" x="700" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_dialokasikan" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="dialokasikan" vertex="1">
+                    <mxGeometry height="60" width="120" x="940" y="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel_mengelola" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="mengelola" vertex="1">
+                    <mxGeometry height="60" width="120" x="1190" y="270" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Donatur ===== -->
+                <mxCell id="a_donatur_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_donatur" vertex="1">
+                    <mxGeometry height="46" width="130" x="45" y="137" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donatur_nama" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="nama" vertex="1">
+                    <mxGeometry height="46" width="130" x="185" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donatur_email" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="email" vertex="1">
+                    <mxGeometry height="46" width="130" x="325" y="137" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donatur_telp" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="no_telp" vertex="1">
+                    <mxGeometry height="46" width="130" x="45" y="437" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Donasi ===== -->
+                <mxCell id="a_donasi_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_donasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="495" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donasi_tgl" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="tgl_donasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="655" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donasi_jumlah" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="jumlah_donasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="450" y="437" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_donasi_metode" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="metode_pembayaran" vertex="1">
+                    <mxGeometry height="46" width="150" x="620" y="437" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Donasi_Proyek ===== -->
+                <mxCell id="a_dp_iddonasi" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_donasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="675" y="537" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_dp_idproyek" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_proyek" vertex="1">
+                    <mxGeometry height="46" width="130" x="915" y="537" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_dp_jumlah" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="jumlah_alokasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="795" y="637" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Proyek ===== -->
+                <mxCell id="a_proyek_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_proyek" vertex="1">
+                    <mxGeometry height="46" width="130" x="985" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_proyek_nama" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="nama_proyek" vertex="1">
+                    <mxGeometry height="46" width="130" x="1135" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_proyek_lokasi" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="lokasi" vertex="1">
+                    <mxGeometry height="46" width="130" x="1135" y="177" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_proyek_mulai" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="tgl_mulai" vertex="1">
+                    <mxGeometry height="46" width="130" x="835" y="177" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_proyek_selesai" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="tgl_selesai" vertex="1">
+                    <mxGeometry height="46" width="130" x="985" y="437" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Atribut Pegawai ===== -->
+                <mxCell id="a_pegawai_id" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;fontStyle=4;" value="id_pegawai" vertex="1">
+                    <mxGeometry height="46" width="130" x="1385" y="97" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pegawai_nama" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="nama_pegawai" vertex="1">
+                    <mxGeometry height="46" width="130" x="1535" y="137" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pegawai_jabatan" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="jabatan" vertex="1">
+                    <mxGeometry height="46" width="130" x="1535" y="297" as="geometry"/>
+                </mxCell>
+                <mxCell id="a_pegawai_kontak" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;fontSize=11;" value="kontak" vertex="1">
+                    <mxGeometry height="46" width="130" x="1385" y="437" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Garis atribut ke entitas ===== -->
+                <mxCell id="e_a_donatur_id" edge="1" parent="1" source="a_donatur_id" style="endArrow=none;html=1;rounded=0;" target="donatur">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donatur_nama" edge="1" parent="1" source="a_donatur_nama" style="endArrow=none;html=1;rounded=0;" target="donatur">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donatur_email" edge="1" parent="1" source="a_donatur_email" style="endArrow=none;html=1;rounded=0;" target="donatur">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donatur_telp" edge="1" parent="1" source="a_donatur_telp" style="endArrow=none;html=1;rounded=0;" target="donatur">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donasi_id" edge="1" parent="1" source="a_donasi_id" style="endArrow=none;html=1;rounded=0;" target="donasi">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donasi_tgl" edge="1" parent="1" source="a_donasi_tgl" style="endArrow=none;html=1;rounded=0;" target="donasi">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donasi_jumlah" edge="1" parent="1" source="a_donasi_jumlah" style="endArrow=none;html=1;rounded=0;" target="donasi">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_donasi_metode" edge="1" parent="1" source="a_donasi_metode" style="endArrow=none;html=1;rounded=0;" target="donasi">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_dp_iddonasi" edge="1" parent="1" source="a_dp_iddonasi" style="endArrow=none;html=1;rounded=0;" target="donasi_proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_dp_idproyek" edge="1" parent="1" source="a_dp_idproyek" style="endArrow=none;html=1;rounded=0;" target="donasi_proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_dp_jumlah" edge="1" parent="1" source="a_dp_jumlah" style="endArrow=none;html=1;rounded=0;" target="donasi_proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_proyek_id" edge="1" parent="1" source="a_proyek_id" style="endArrow=none;html=1;rounded=0;" target="proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_proyek_nama" edge="1" parent="1" source="a_proyek_nama" style="endArrow=none;html=1;rounded=0;" target="proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_proyek_lokasi" edge="1" parent="1" source="a_proyek_lokasi" style="endArrow=none;html=1;rounded=0;" target="proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_proyek_mulai" edge="1" parent="1" source="a_proyek_mulai" style="endArrow=none;html=1;rounded=0;" target="proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_proyek_selesai" edge="1" parent="1" source="a_proyek_selesai" style="endArrow=none;html=1;rounded=0;" target="proyek">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pegawai_id" edge="1" parent="1" source="a_pegawai_id" style="endArrow=none;html=1;rounded=0;" target="pegawai">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pegawai_nama" edge="1" parent="1" source="a_pegawai_nama" style="endArrow=none;html=1;rounded=0;" target="pegawai">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pegawai_jabatan" edge="1" parent="1" source="a_pegawai_jabatan" style="endArrow=none;html=1;rounded=0;" target="pegawai">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_a_pegawai_kontak" edge="1" parent="1" source="a_pegawai_kontak" style="endArrow=none;html=1;rounded=0;" target="pegawai">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- ===== Garis relasi. Garis tunggal = parsial, garis ganda (shape=link) = total ===== -->
+
+                <!-- Donatur (parsial) 1 — memberikan — N Donasi (total) -->
+                <mxCell id="e_donatur_memberikan" edge="1" parent="1" source="donatur" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" target="rel_memberikan" value="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_memberikan_donasi" edge="1" parent="1" source="rel_memberikan" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" target="donasi" value="N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- Donasi (parsial) 1 — memiliki — N Donasi_Proyek (total) -->
+                <mxCell id="e_donasi_memiliki" edge="1" parent="1" source="donasi" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" target="rel_memiliki" value="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_memiliki_dp" edge="1" parent="1" source="rel_memiliki" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" target="donasi_proyek" value="N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- Donasi_Proyek (total) N — dialokasikan — 1 Proyek (parsial) -->
+                <mxCell id="e_dp_dialokasikan" edge="1" parent="1" source="donasi_proyek" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" target="rel_dialokasikan" value="N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_dialokasikan_proyek" edge="1" parent="1" source="rel_dialokasikan" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" target="proyek" value="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+                <!-- Pegawai (parsial) 1 — mengelola — N Proyek (total) -->
+                <mxCell id="e_pegawai_mengelola" edge="1" parent="1" source="pegawai" style="endArrow=none;html=1;rounded=0;fontSize=12;labelBackgroundColor=#ffffff;" target="rel_mengelola" value="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_mengelola_proyek" edge="1" parent="1" source="rel_mengelola" style="shape=link;html=1;rounded=0;width=6;fontSize=12;labelBackgroundColor=#ffffff;" target="proyek" value="N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
